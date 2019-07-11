@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.cu": "cpp",
+        "system_error": "cpp",
+        "iostream": "cpp"
+    }
+}

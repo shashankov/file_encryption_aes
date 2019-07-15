@@ -5,7 +5,7 @@ CFLAGS = -O3 -D UBUNTU18_04 -std=c++17 -qopenmp -fp-model fast=2 -parallel -mkl 
 DEPS = stdafx.h
 RM = rm
 FILE_NAME = AES_Decryption
-FILE_NAME = AES_Encryption
+$FILE_NAME = AES_Encryption
 
 SEPARATOR = /
 

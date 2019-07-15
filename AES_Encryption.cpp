@@ -10,7 +10,7 @@
 #define BUFFER_SIZE (32 * 1024)
 
 vector<pair<unsigned char[CHUNK_SIZE], uint64_t> > buffer;
-volatile uint8_t write_head = 0, execute_head = 0, tail = 0;	// Variables for circular queue
+volatile uint64_t write_head = 0, execute_head = 0, tail = 0;	// Variables for circular queue
 
 bool read_complete = false, work_complete = false;
 sem_t s_read, s_work, s_write;	// Semaphore to implement multithreading
@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
 	gettimeofday(&start, NULL);
 
 	uint64_t size = 16 * (input_size / 16) + ((input_size % 16) ? 16 : 0), size_copy = size;
-	unsigned char* metadata = new unsigned char[16 * 2];
+	unsigned char metadata[16 * 2];
 	AES file(key, true, &input_size, metadata);
 	ofile.write((char *) metadata, 16 * 2);
 
@@ -137,7 +137,6 @@ int main(int argc, char *argv[])
 					sem_getvalue(&s_work, &work_left);
 					if (read_complete && (work_left == 0))
 						break;
-
 					file.encrypt(buffer[execute_head].first, buffer[execute_head].second);
 
 					execute_size += buffer[execute_head].second;

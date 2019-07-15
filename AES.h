@@ -7,8 +7,8 @@
 #define NUM_KEYS uint8_t(11)    //11    or 13   or 15
 #define KEY_LENGTH (KEY_SIZE/32)
 
-#define ECB 	0	// Electronic CodeBook
-#define CBC 	1	// Cipher Block Chaining
+#define ECB 	1	// Electronic CodeBook
+#define CBC 	0	// Cipher Block Chaining
 #define PCBC 	0	// Propagating Cipher Block Chaining
 #define CFB		0	// Cipher Feedback
 #define OFB		0	// Output Feedback

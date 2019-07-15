@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<actions xmlns:unsignedInt="http://www.w3.org/2001/XMLSchema#unsignedInt">
+ <action object="component[id='TabPane']" unsignedInt:pause="27287" unsignedInt:time="27287">
+  <objectAction tab="Analysis Type">Switch</objectAction>
+ </action>
+ <action object="component[id='TabPane']" unsignedInt:pause="146928" unsignedInt:time="174215">
+  <objectAction tab="Collection Log">Switch</objectAction>
+ </action>
+</actions>
